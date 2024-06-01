@@ -12,7 +12,7 @@ Goals:
 - QA the data
 - generate the ERD of the database
 
-[assignment.md has an overview of the process](docs/assignment.md)
+[assignment.md has an overview of the process](/assignment.md)
 
 ## Process
 ### Load the Data
