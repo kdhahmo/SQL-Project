@@ -15,7 +15,7 @@ Goals:
 [assignment.md has an overview of the process](docs/assignment.md)
 
 ## Process
-### Load the data
+### Load the Data
 - Download the provided files
 - Go to pgAdmin4
  - Go to the Object Explorer sidebar
@@ -40,40 +40,34 @@ RESTART IDENTITY;
    - Import the csv file.
  - Repeat this process for every table. 
 
-### Examine the data and determine the data source
+### Examine the Data and Determine the Data Source
 The data was provided with no comment as to its source, so the next step is to see what information we can get from the files at the [source we have been provided with](https://drive.google.com/drive/folders/1efDA4oc9w-bTbAvrESdOJpg9u-gEUBhJ). There are no descriptions on the files, so the next step is to check online.
 
-The search 'data set fullVisitorId, channelgrouping, time, country, city' turned up posts mentioning an 'Ecommerce' or 'E-Commerce' dataset and 'BigQuery'. 
-
-Searching '"E-Commerce" retail data set "google analytics”' leads to a github page that draws from a google analytics data source.
-
-The github page links to a [BigQuery schema](https://support.google.com/analytics/answer/3437719?hl=en).
+The search 'data set fullVisitorId, channelgrouping, time, country, city' turned up posts mentioning an 'Ecommerce' or 'E-Commerce' dataset and 'BigQuery'. Searching '"E-Commerce" retail data set "google analytics”' leads to a github page that draws from a google analytics data source. The github page links to a [BigQuery schema](https://support.google.com/analytics/answer/3437719?hl=en).
 
 Above the '[UA] BigQuery Export schema' title are links. The [BigQuery Export](https://support.google.com/analytics/topic/3416089?hl=en&ref_topic=2430414&sjid=7886829371119872236-NC) link has a page titled [[UA] Google Analytics sample dataset for BigQuery](https://support.google.com/analytics/answer/7586738?hl=en&ref_topic=3416089&sjid=7886829371119872236-NC#zippy=%2Cin-this-article). This page provides information on the dataset that we are working with. We can verify it is the same dataset by checking the column values and date range. Both the provided data and this dataset have dates only in the range of August 2016 to August 2017. The types of data in this sample database match up with what we can see from the provided data. Column names like fullvisitorid, visitid, and ecommerceaction_type are the same.
 
 This page explains that the data is obfuscated Google Analytics 360 data from the Google Merchandise Store. It explains that some data such as fullvisitorids have been obfuscated and others have been removed and either made null in the case of integers or “Not available in demo dataset” in the case of string values. This helps us interpret “Not available in demo dataset” values in the city column.
 
-[See the Come up with more questions about the data and answer them section in Results for details on the data.](https://github.com/kdhahmo/SQL-Project?tab=readme-ov-file#come-up-with-more-questions-about-the-data-and-answer-them)
+[See the Come Up With More Questions About the Data and Answer Them section in Results for details on the data.](https://github.com/kdhahmo/SQL-Project?tab=readme-ov-file#come-up-with-more-questions-about-the-data-and-answer-them)
 
-### Clean the data
-Because all columns were imported as the varchar data type, many of the columns need to have their datatypes cast to the correct ones.
-
-Columns with money values need to have their numbers divided by 1,000,000.
-
+### Clean the Data
+Because all columns were imported as the varchar data type, many of the columns need to have their datatypes cast to the correct ones. 
+Columns with money values need to have their numbers divided by 1,000,000. 
 Other things like syntax need to be addressed. 
 
 [See the Clean the data section in Results for an overview of the cleaning process.](https://github.com/kdhahmo/SQL-Project?tab=readme-ov-file#clean-the-data)
 
 [Steps are provided in cleaning_data.md](docs/cleaning_data.md)
 
-### Answer the provided questions about the data
+### Answer the Provided Questions About the Data
 The data can tell us about the cities and countries of people who visited the site.
 
 [See the Starting With Questions section in Results for an overview of these questions and answers.](https://github.com/kdhahmo/SQL-Project?tab=readme-ov-file#starting-with-questions)
 
 [See starting_with_questions.md for in depth process on the questions and answers](docs/starting_with_questions.md)
 
-### Come up with more questions about the data and answer them
+### Come Up With More Questions About the Data and Answer Them
 The data can tell us about the total hits across the site.
 We will query the online dataset to tie more data together.
 ```SQL
@@ -99,14 +93,14 @@ WHERE
 
 [See starting_with_data.md for in depth process on the questions and answers](docs/starting_with_data.md)
 
-### QA the data
+### QA the Data
 This dataset has been purposefuly obfuscated to protect privacy. While there are some values that are explicitly said to have been changed, there are still uncertainties with using this data.
 
 [See the Challenges and QA section in Results for an overview of the QA process.](https://github.com/kdhahmo/SQL-Project?tab=readme-ov-file#challenges-and-qa)
 
 [See QA.md for in depth QA process](docs/QA.md)
 
-### Generate the ERD of the database
+### Generate the ERD of the Database
 The ERD can be generated by going to the Object Explorer sidebar, right clicking on the 'ecommerce' database, and clicking on 'ERD for database'.
 
 [The ERD is saved as schema.png](docs/schema.png)
