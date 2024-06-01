@@ -1,4 +1,5 @@
-What are your risk areas? Identify and describe them.
+What are your risk areas? Identify and describe them:
+
 This dataset has been purposefuly obfuscated to protect privacy. While there are some values that are explicitly said to have been changed, there are still uncertainties with using this data.
 1. If a city or country name is written with different case types, more 'unique' cities could exist than there actually are.
 2. If a revenue value is null, negative, or an extremely large value it could skew data.
@@ -11,7 +12,7 @@ This dataset has been purposefuly obfuscated to protect privacy. While there are
 9. If a total_ordered value is null, negative, or an extremely large value it could skew data.
 
 QA Process:
-Describe your QA process and include the SQL queries used to execute it.
+Describe your QA process and include the SQL queries used to execute it:
 
 1. Ensuring that the city and country values have the same case, to prevent unique values that are actually duplicates.
 
