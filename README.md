@@ -127,6 +127,25 @@ We can summarize the impact of revenue generated from each city/country by using
 ### Starting With Data
 The data can tell us about the total hits across the site.
 
+Querying extra data from the data source to answer these questions.
+``` SQL
+SELECT
+	visitNumber
+	, visitId
+	, fullVisitorId
+	, date
+	, totals.hits
+	, hits.hitNumber
+	, hits.time
+	, hits.hour
+	, hits.minute
+FROM
+	`bigquery-public-data.google_analytics_sample.ga_sessions_*`
+	, UNNEST(hits) AS hits
+	
+WHERE
+  _TABLE_SUFFIX BETWEEN '20160801' AND '20170801'
+```
 
 We can find how many unique visitors were there by month by using the sessiondate and fullvisitorid in the all_sessions table. We can extract the year and month from sessiondate into separate columns to group the data by. We can then count distinct fullvisitorids from this grouped data. 
 
