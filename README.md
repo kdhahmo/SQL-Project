@@ -14,8 +14,6 @@ Goals:
 
 [assignment.md has an overview of the process](/assignment.md)
 
-[Return to Table of Contents](https://github.com/kdhahmo/SQL-Project?tab=readme-ov-file#table-of-contents)
-
 ---
 ## Process
 ### Load the Data
